@@ -36,7 +36,7 @@ int main() {
     scanf("%d", &pTuristico);
 
     // Fazendo o cálculo do PIB per capita e da densidade populacional
-    pibper = (float) pib / pop;
+    pibper = (float) pib * 1000000000 / (pop * 1000000); // Convertendo unidades
     dpop = (float) pop / area;
 
     // Exibindo as informações (output de dados)
