@@ -94,6 +94,12 @@ int main() {
     printf("Número de pontos turísticos: %d\n", pTuristico2);
     printf("O super poder da carta é %.2f\n", superpower2);
 
+    printf("\n--- Hora do Duelo ---\n");
+
+    //Fazendo a comparação entre as cartas
+    printf("Se o resultado do embate for 1, a carta 1 ganhou;\nSe o resultado for 0, a carta 2 ganhou.\n");
+    printf("O embate entre as cartas resultou em %d.\n", (superpower1 > superpower2) && (pTuristico1 < pTuristico2));
+
     // Fim do programa
     return 0;
 }
