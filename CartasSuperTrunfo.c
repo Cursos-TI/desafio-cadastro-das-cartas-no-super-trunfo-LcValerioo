@@ -36,8 +36,31 @@ int main() {
 
     printf("Digite o número de pontos turísticos da cidade da Primeira Carta: \n");
     scanf("%d", &pTuristico1);
+
+    // Fazendo o cálculo do PIB per capita e da densidade populacional
+    pibper1 = (float) pib1 * 1000000000 / (pop1 * 1000000); // Convertendo unidades
+    dpop1 = (float) pop1 / area1;
+    superpower1 = (float) pTuristico1 + codCarta1 + pop1 + area1 + pib1 + pibper1 + dpop1;
+
+    printf("\nCarta cadastrada com sucesso!");//Confirmação de cadastro da carta
+
+    // Exibindo as informações (output de dados)
+    printf("\n--- Dados das Cartas ---\n");
+    printf("\n--- Primeira Cartas ---\n");
+    printf("Estado: %c\n", estado1);
+    printf("Código da carta: %c0%d\n", estado1, codCarta1);
+    printf("Nome da Cidade: %s\n", nome1);
+    printf("População: %lu habitantes\n", pop1);
+    printf("Área: %.2f km²\n", area1);
+    printf("Densidade Populacional: %.2f hab/km²\n", dpop1);
+    printf("PIB: %.2f bilhões de reais\n", pib1);
+    printf("PIB per Capita: %.2f reais\n", pibper1);
+    printf("Número de pontos turísticos: %d\n", pTuristico1);
+    printf("O super poder da carta é %.2f\n", superpower1);
+
+    
     //Cadastro da Segunda Carta
-    printf("Digite o Estado (letra) da Segunda Carta: \n");
+    printf("\nDigite o Estado (letra) da Segunda Carta: \n");
     scanf(" %c", &estado2);
 
     printf("Digite o Código da cidade da Segunda Carta: \n");
@@ -60,28 +83,16 @@ int main() {
     printf("Digite o número de pontos turísticos da cidade da Segunda Carta: \n");
     scanf("%d", &pTuristico2);
 
-    // Fazendo o cálculo do PIB per capita e da densidade populacional
-    pibper1 = (float) pib1 * 1000000000 / (pop1 * 1000000); // Convertendo unidades
-    dpop1 = (float) pop1 / area1;
-    superpower1 = (float) pTuristico1 + codCarta1 + pop1 + area1 + pib1 + pibper1 + dpop1;
+    
     pibper2 = (float) pib2 * 1000000000 / (pop2 * 1000000); // Convertendo unidades
     dpop2 = (float) pop2 / area2;
     superpower2 = (float) pTuristico2 + codCarta2 + pop2 + area2 + pib2 + pibper2 + dpop2;
 
+   
+    printf("\nCarta cadastrada com sucesso!\n"); //Confirmação de cadastro da carta
+
     // Exibindo as informações (output de dados)
     printf("\n--- Dados das Cartas ---\n");
-    printf("\n--- Primeira Cartas ---\n");
-    printf("Estado: %c\n", estado1);
-    printf("Código da carta: %c0%d\n", estado1, codCarta1);
-    printf("Nome da Cidade: %s\n", nome1);
-    printf("População: %lu habitantes\n", pop1);
-    printf("Área: %.2f km²\n", area1);
-    printf("Densidade Populacional: %.2f hab/km²\n", dpop1);
-    printf("PIB: %.2f bilhões de reais\n", pib1);
-    printf("PIB per Capita: %.2f reais\n", pibper1);
-    printf("Número de pontos turísticos: %d\n", pTuristico1);
-    printf("O super poder da carta é %.2f\n", superpower1);
-
     printf("\n--- Segunda Cartas ---\n");
     printf("Estado: %c\n", estado2);
     printf("Código da carta: %c0%d\n", estado2, codCarta2);
@@ -97,9 +108,18 @@ int main() {
     printf("\n--- Hora do Duelo ---\n");
 
     //Fazendo a comparação entre as cartas
-    printf("Se o resultado do embate for 1, a carta 1 ganhou;\nSe o resultado for 0, a carta 2 ganhou.\n");
-    printf("O embate entre as cartas resultou em %d.\n", (superpower1 > superpower2) && (pTuristico1 < pTuristico2));
-
+    if(pib1 > pib2)
+    {
+        printf("Carta 1 - Estado: %c, Código: %c0%d, Pib: %.2f\n", nome1, estado1, codCarta1, pib1);
+        printf("Carta 2 - Estado: %c, Código: %c0%d, Pib: %.2f\n", nome2, estado2, codCarta2, pib2);
+        printf("Resultado: Carta 1 é a vencedora!");
+    }
+    else 
+    {
+        printf("Carta 1 - Estado: %c, Código: %c0%d, Pib: %.2f\n", nome1, estado1, codCarta1, pib1);
+        printf("Carta 2 - Estado: %c, Código: %c0%d, Pib: %.2f\n", nome2, estado2, codCarta2, pib2);
+        printf("Resultado: Carta 2 é a vencedora!");
+    }
     // Fim do programa
     return 0;
 }
