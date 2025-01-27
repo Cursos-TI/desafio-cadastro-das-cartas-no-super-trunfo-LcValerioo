@@ -2,17 +2,17 @@
 #include <stdlib.h>
 
 int main() {
-    // Início do programa
+    //Início do programa
     printf("Olá, vamos cadastrar uma carta?\n");
 
-    // Inicializando as variáveis
+    //Inicializando as variáveis
     char nome1[50], nome2[50];
     char estado1, estado2;
     int pTuristico1, codCarta1, pTuristico2, codCarta2 = 0;
     float area1, pib1, pibper1, dpop1, superpower1, area2, pib2, pibper2, dpop2, superpower2 = 0.0;
     unsigned long int pop1, pop2 = 0;
 
-    // Cadastrando as cartas (input de dados)
+    //Cadastrando as cartas (input de dados)
     //Cadastro da Primeira Carta
     printf("Digite o Estado (letra) da Primeira Carta: \n");
     scanf(" %c", &estado1);
@@ -20,7 +20,7 @@ int main() {
     printf("Digite o Código da cidade da Primeira Carta: \n");
     scanf("%d", &codCarta1);
 
-    getchar(); // Limpa o buffer antes de usar fgets
+    getchar(); //Limpa o buffer antes de usar fgets
     printf("Digite o nome da cidade da Primeira Carta: \n");
     fgets(nome1, 50, stdin);
     nome1[strcspn(nome1, "\n")] = '\0'; // Remove o '\n' do final da string capturada por fgets
@@ -60,6 +60,7 @@ int main() {
 
     
     //Cadastro da Segunda Carta
+    printf("\n--Agora cadastre a Segunda Carta--\n");
     printf("\nDigite o Estado (letra) da Segunda Carta: \n");
     scanf(" %c", &estado2);
 
@@ -83,7 +84,7 @@ int main() {
     printf("Digite o número de pontos turísticos da cidade da Segunda Carta: \n");
     scanf("%d", &pTuristico2);
 
-    
+    // Fazendo o cálculo do PIB per capita e da densidade populacional
     pibper2 = (float) pib2 * 1000000000 / (pop2 * 1000000); // Convertendo unidades
     dpop2 = (float) pop2 / area2;
     superpower2 = (float) pTuristico2 + codCarta2 + pop2 + area2 + pib2 + pibper2 + dpop2;
@@ -107,7 +108,7 @@ int main() {
 
     printf("\n--- Hora do Duelo ---\n");
 
-    //Fazendo a comparação entre as cartas
+    //Fazendo a comparação entre as cartas para ver quem tem o maior PIB e imprimindo o resultado na tela
     if(pib1 > pib2)
     {
         printf("Carta 1 - Estado: %c, Código: %c0%d, Pib: %.2f\n", nome1, estado1, codCarta1, pib1);
