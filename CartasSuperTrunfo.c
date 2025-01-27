@@ -111,14 +111,14 @@ int main() {
     //Fazendo a comparação entre as cartas para ver quem tem o maior PIB e imprimindo o resultado na tela
     if(pib1 > pib2)
     {
-        printf("Carta 1 - Estado: %c, Código: %c0%d, Pib: %.2f\n", nome1, estado1, codCarta1, pib1);
-        printf("Carta 2 - Estado: %c, Código: %c0%d, Pib: %.2f\n", nome2, estado2, codCarta2, pib2);
+        printf("Carta 1 - Estado: %s, Código: %c0%d, Pib: %.2f\n", nome1, estado1, codCarta1, pib1);
+        printf("Carta 2 - Estado: %s, Código: %c0%d, Pib: %.2f\n", nome2, estado2, codCarta2, pib2);
         printf("Resultado: Carta 1 é a vencedora!");
     }
     else 
     {
-        printf("Carta 1 - Estado: %c, Código: %c0%d, Pib: %.2f\n", nome1, estado1, codCarta1, pib1);
-        printf("Carta 2 - Estado: %c, Código: %c0%d, Pib: %.2f\n", nome2, estado2, codCarta2, pib2);
+        printf("Carta 1 - Estado: %s, Código: %c0%d, Pib: %.2f\n", nome1, estado1, codCarta1, pib1);
+        printf("Carta 2 - Estado: %s, Código: %c0%d, Pib: %.2f\n", nome2, estado2, codCarta2, pib2);
         printf("Resultado: Carta 2 é a vencedora!");
     }
     // Fim do programa
