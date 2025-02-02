@@ -8,7 +8,7 @@ int main() {
     //Inicializando as variáveis
     char nome1[50], nome2[50];
     char estado1, estado2;
-    int pTuristico1, codCarta1, pTuristico2, codCarta2 = 0;
+    int pTuristico1, codCarta1, pTuristico2, codCarta2, opcao = 0;
     float area1, pib1, pibper1, dpop1, superpower1, area2, pib2, pibper2, dpop2, superpower2 = 0.0;
     unsigned long int pop1, pop2 = 0;
 
@@ -107,20 +107,122 @@ int main() {
     printf("O super poder da carta é %.2f\n", superpower2);
 
     printf("\n--- Hora do Duelo ---\n");
+    printf("\nEscolha um Atributo para Duelar: \n");
+    printf("1. População \n2. Área \n3. Densidade Populacional \n4. PIB \n5. PIB per Capita  \n6. Número de Pontos Turisticos \n");
+    printf("Escolha: ");
+    scanf("%d", &opcao);
 
-    //Fazendo a comparação entre as cartas para ver quem tem o maior PIB e imprimindo o resultado na tela
-    if(pib1 > pib2)
+    //Fazendo a comparação entre as cartas para ver quem tem o maior atributo e menor ponto turistico e imprimindo o resultado na tela
+    switch (opcao)
     {
-        printf("Carta 1 - Estado: %s, Código: %c0%d, Pib: %.2f\n", nome1, estado1, codCarta1, pib1);
-        printf("Carta 2 - Estado: %s, Código: %c0%d, Pib: %.2f\n", nome2, estado2, codCarta2, pib2);
-        printf("Resultado: Carta 1 é a vencedora!");
+    case 1:
+        if((pop1 == pop2) && (pTuristico1 == pTuristico2))
+            {
+                printf("Carta 1 - Estado: %s, Código: %c0%d, População: %d, Pontos Turisticos: %d\n", nome1, estado1, codCarta1, pop1, pTuristico1);
+                printf("Carta 2 - Estado: %s, Código: %c0%d, População: %d, Pontos Turisticos: %d\n", nome2, estado2, codCarta2, pop2, pTuristico2);
+                printf("--- Resultado: Empate!--- ");
+            } else if((pop1 > pop2) && (pTuristico1 < pTuristico2))
+                    {
+                        printf("Carta 1 - Estado: %s, Código: %c0%d, População: %d, Pontos Turisticos: %d\n", nome1, estado1, codCarta1, pop1, pTuristico1);
+                        printf("Carta 2 - Estado: %s, Código: %c0%d, População: %d, Pontos Turisticos: %d\n", nome2, estado2, codCarta2, pop2, pTuristico2);
+                        printf("--- Resultado: Carta 1 é a vencedora!---");
+                    } else {
+                        printf("Carta 1 - Estado: %s, Código: %c0%d, População: %d, Pontos Turisticos: %d\n", nome1, estado1, codCarta1, pop1, pTuristico1);
+                        printf("Carta 2 - Estado: %s, Código: %c0%d, População: %d, Pontos Turisticos: %d\n", nome2, estado2, codCarta2, pop2, pTuristico2);
+                        printf("--- Resultado: Carta 2 é a vencedora!---");
+                    }
+        break;
+    case 2:
+            if((area1 == area2) && (pTuristico1 == pTuristico2))
+            {
+                printf("Carta 1 - Estado: %s, Código: %c0%d, Área: %d, Pontos Turisticos: %d\n", nome1, estado1, codCarta1, area1, pTuristico1);
+                printf("Carta 2 - Estado: %s, Código: %c0%d, Área: %d, Pontos Turisticos: %d\n", nome2, estado2, codCarta2, area2, pTuristico2);
+                printf("--- Resultado: Empate!--- ");
+            } else if((area1 > area2) && (pTuristico1 < pTuristico2))
+                    {
+                        printf("Carta 1 - Estado: %s, Código: %c0%d, Área: %d, Pontos Turisticos: %d\n", nome1, estado1, codCarta1, area1, pTuristico1);
+                        printf("Carta 2 - Estado: %s, Código: %c0%d, Área: %d, Pontos Turisticos: %d\n", nome2, estado2, codCarta2, area2, pTuristico2);
+                        printf("--- Resultado: Carta 1 é a vencedora!---");
+                    } else {
+                       printf("Carta 1 - Estado: %s, Código: %c0%d, Área: %d, Pontos Turisticos: %d\n", nome1, estado1, codCarta1, area1, pTuristico1);
+                       printf("Carta 2 - Estado: %s, Código: %c0%d, Área: %d, Pontos Turisticos: %d\n", nome2, estado2, codCarta2, area2, pTuristico2);
+                        printf("--- Resultado: Carta 2 é a vencedora!---");
+                    }
+        break;
+    case 3:
+            if((dpop1 == dpop2) && (pTuristico1 == pTuristico2))
+            {
+                printf("Carta 1 - Estado: %s, Código: %c0%d, Densidade Populacional: %.2f, Pontos Turisticos: %d\n", nome1, estado1, codCarta1, dpop1, pTuristico1);
+                printf("Carta 2 - Estado: %s, Código: %c0%d, Densidade Populacional: %.2f, Pontos Turisticos: %d\n", nome2, estado2, codCarta2, dpop2, pTuristico2);
+                printf("--- Resultado: Empate!--- ");
+            } else if((dpop1 > dpop2) && (pTuristico1 < pTuristico2))
+                    {
+                        printf("Carta 1 - Estado: %s, Código: %c0%d, Densidade Populacional: %.2f, Pontos Turisticos: %d\n", nome1, estado1, codCarta1, dpop1, pTuristico1);
+                        printf("Carta 2 - Estado: %s, Código: %c0%d, Densidade Populacional: %.2f, Pontos Turisticos: %d\n", nome2, estado2, codCarta2, dpop2, pTuristico2);
+                        printf("--- Resultado: Carta 1 é a vencedora!---");
+                    } else {
+                       printf("Carta 1 - Estado: %s, Código: %c0%d, Densidade Populacional: %.2f, Pontos Turisticos: %d\n", nome1, estado1, codCarta1, dpop1, pTuristico1);
+                       printf("Carta 2 - Estado: %s, Código: %c0%d, Densidade Populacional: %.2f, Pontos Turisticos: %d\n", nome2, estado2, codCarta2, dpop2, pTuristico2);
+                       printf("--- Resultado: Carta 2 é a vencedora!---");
+                    }
+        break;
+    case 4:
+            if((pib1 == pib2) && (pTuristico1 == pTuristico2))
+            {
+                printf("Carta 1 - Estado: %s, Código: %c0%d, Pib: %.2f, Pontos Turisticos: %d\n", nome1, estado1, codCarta1, pib1, pTuristico1);
+                printf("Carta 2 - Estado: %s, Código: %c0%d, Pib: %.2f, Pontos Turisticos: %d\n", nome2, estado2, codCarta2, pib2, pTuristico2);
+                printf("--- Resultado: Empate!--- ");
+            } else if((pib1 > pib2) && (pTuristico1 < pTuristico2))
+                    {
+                        printf("Carta 1 - Estado: %s, Código: %c0%d, Pib: %.2f, Pontos Turisticos: %d\n", nome1, estado1, codCarta1, pib1, pTuristico1);
+                        printf("Carta 2 - Estado: %s, Código: %c0%d, Pib: %.2f, Pontos Turisticos: %d\n", nome2, estado2, codCarta2, pib2, pTuristico2);
+                        printf("--- Resultado: Carta 1 é a vencedora!---");
+                    } else {
+                        printf("Carta 1 - Estado: %s, Código: %c0%d, Pib: %.2f, Pontos Turisticos: %d\n", nome1, estado1, codCarta1, pib1, pTuristico1);
+                        printf("Carta 2 - Estado: %s, Código: %c0%d, Pib: %.2f, Pontos Turisticos: %d\n", nome2, estado2, codCarta2, pib2, pTuristico2);
+                        printf("--- Resultado: Carta 2 é a vencedora!---");
+                    }
+        break;
+    case 5:
+            if((pibper1 == pibper2) && (pTuristico1 == pTuristico2))
+            {
+                printf("Carta 1 - Estado: %s, Código: %c0%d, Pib per Capita: %.2f, Pontos Turisticos: %d\n", nome1, estado1, codCarta1, pibper1, pTuristico1);
+                printf("Carta 2 - Estado: %s, Código: %c0%d, Pib per Capita: %.2f, Pontos Turisticos: %d\n", nome2, estado2, codCarta2, pibper2, pTuristico2);
+                printf("--- Resultado: Empate!--- ");
+            } else if((pib1 > pib2) && (pTuristico1 < pTuristico2))
+                    {
+                        printf("Carta 1 - Estado: %s, Código: %c0%d, Pib per Capita: %.2f, Pontos Turisticos: %d\n", nome1, estado1, codCarta1, pibper1, pTuristico1);
+                        printf("Carta 2 - Estado: %s, Código: %c0%d, Pib per Capita: %.2f, Pontos Turisticos: %d\n", nome2, estado2, codCarta2, pibper2, pTuristico2);
+                        printf("--- Resultado: Carta 1 é a vencedora!---");
+                    } else {
+                        printf("Carta 1 - Estado: %s, Código: %c0%d, Pib per Capita: %.2f, Pontos Turisticos: %d\n", nome1, estado1, codCarta1, pibper1, pTuristico1);
+                        printf("Carta 2 - Estado: %s, Código: %c0%d, Pib per Capita: %.2f, Pontos Turisticos: %d\n", nome2, estado2, codCarta2, pibper2, pTuristico2);
+                        printf("--- Resultado: Carta 2 é a vencedora!---");
+                    }
+        break;
+    case 6:
+            if(pTuristico1 == pTuristico2)
+            {
+                printf("Carta 1 - Estado: %s, Código: %c0%d, Pontos Turisticos: %d\n", nome1, estado1, codCarta1, pTuristico1);
+                printf("Carta 2 - Estado: %s, Código: %c0%d, Pontos Turisticos: %d\n", nome2, estado2, codCarta2, pTuristico2);
+                printf("--- Resultado: Empate!--- ");
+            } else if(pTuristico1 < pTuristico2)
+                    {
+                       printf("Carta 1 - Estado: %s, Código: %c0%d, Pontos Turisticos: %d\n", nome1, estado1, codCarta1, pTuristico1);
+                       printf("Carta 2 - Estado: %s, Código: %c0%d, Pontos Turisticos: %d\n", nome2, estado2, codCarta2, pTuristico2);
+                       printf("--- Resultado: Carta 1 é a vencedora!---");
+                    } else {
+                        printf("Carta 1 - Estado: %s, Código: %c0%d, Pontos Turisticos: %d\n", nome1, estado1, codCarta1, pTuristico1);
+                        printf("Carta 2 - Estado: %s, Código: %c0%d, Pontos Turisticos: %d\n", nome2, estado2, codCarta2, pTuristico2);
+                        printf("--- Resultado: Carta 2 é a vencedora!---");
+                    }
+        break;
+    
+    default:
+        printf("Opção Inválida");
+        break;
     }
-    else 
-    {
-        printf("Carta 1 - Estado: %s, Código: %c0%d, Pib: %.2f\n", nome1, estado1, codCarta1, pib1);
-        printf("Carta 2 - Estado: %s, Código: %c0%d, Pib: %.2f\n", nome2, estado2, codCarta2, pib2);
-        printf("Resultado: Carta 2 é a vencedora!");
-    }
+
     // Fim do programa
     return 0;
 }
